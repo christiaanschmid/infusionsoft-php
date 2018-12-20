@@ -539,6 +539,7 @@ class Infusionsoft
             'files',
             'funnels',
             'invoices',
+            'merchants',
             'orders',
             'products',
             'search',
@@ -650,6 +651,14 @@ class Infusionsoft
     }
 
     /**
+     * @return \Infusionsoft\Api\Rest\MerchantService
+     */
+    public function merchants()
+    {
+        return $this->getRestApi('MerchantService');
+    }
+
+    /**
      * @param string $api
      *
      * @return mixed
@@ -726,6 +735,14 @@ class Infusionsoft
     }
 
     /**
+     * @return \Infusionsoft\Api\Rest\NoteService
+     */
+    public function notes()
+    {
+        return $this->getRestApi('NoteService');
+    }
+
+    /**
      * @return \Infusionsoft\Api\Rest\AppointmentService
      */
     public function appointments()
@@ -763,6 +780,20 @@ class Infusionsoft
     public function campaigns()
     {
         return $this->getRestApi('CampaignService');
+    }
+
+	/**
+	 * @return \Infusionsoft\Api\Rest\CampaignService
+	 */
+	public function companies()
+	{
+		return $this->getRestApi('CompanyService');
+	}
+
+
+    public function userinfo()
+    {
+        return $this->getRestApi('UserInfoService');
     }
 
     /**
