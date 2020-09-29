@@ -67,10 +67,8 @@ class GuzzleHttpClient extends Client implements ClientInterface
         }
 
         try {
-            $request  = new Request($method, $uri, $options['headers'], $options['body']);
-            $response = $this->send($request);
-
-            return $response->getBody();
+            $request = new Request($method, $uri, $options['headers'], $options['body']);
+            return $this->send($request);
         } catch (BadResponseException $e) {
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
