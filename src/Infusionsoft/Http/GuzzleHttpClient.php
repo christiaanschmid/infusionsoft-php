@@ -9,6 +9,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Middleware;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
 class GuzzleHttpClient extends Client implements ClientInterface
@@ -39,7 +40,7 @@ class GuzzleHttpClient extends Client implements ClientInterface
     public function getXmlRpcTransport()
     {
 
-        $adapter = new \Http\Adapter\Guzzle6\Client($this);
+        $adapter = new \Http\Adapter\Guzzle7\Client($this);
 
         return new HttpAdapterTransport(new \Http\Message\MessageFactory\DiactorosMessageFactory(),
             $adapter);
@@ -49,13 +50,13 @@ class GuzzleHttpClient extends Client implements ClientInterface
      * Sends a request to the given URI and returns the raw response.
      *
      * @param string $method
-     * @param string $uri
+     * @param string|\Psr\Http\Message\UriInterface $uri
      * @param array $options
      *
      * @return mixed
      * @throws HttpException
      */
-    public function request($method, $uri = null, array $options = [])
+    public function request(string $method, $uri = null, array $options = []) : ResponseInterface
     {
         if ( ! isset($options['headers'])) {
             $options['headers'] = [];
