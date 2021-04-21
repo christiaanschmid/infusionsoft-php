@@ -13,10 +13,16 @@
             "homepage": "https://developer.infusionsoft.com"
         }
     ],
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "https://github.com/toddstoker/fxmlrpc"
+        }
+    ],
     "require": {
         "php": ">=7.3",
         "guzzlehttp/guzzle": "^7",
-        "lstrojny/fxmlrpc": "^0.15.0",
+        "lstrojny/fxmlrpc": "dev-php8",
         "psr/log": "~1.0",
         "laminas/laminas-diactoros": "^2.0",
         "php-http/guzzle7-adapter": "^0.1",
