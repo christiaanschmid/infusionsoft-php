@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.0",
         "guzzlehttp/guzzle": "^7.4.2",
         "lstrojny/fxmlrpc": "^0.20.0",
         "psr/log": "^3.0",
@@ -41,6 +41,11 @@
             "aliases": {
                 "Infusionsoft": "Infusionsoft\\FrameworkSupport\\Laravel\\InfusionsoftFacade"
             }
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
         }
     }
 }
