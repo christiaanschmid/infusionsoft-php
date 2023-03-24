@@ -8,6 +8,7 @@ use Psr\Log\LogLevel;
 class ArrayLogger implements LoggerInterface
 {
 
+    /* test */
     private $logs = [];
 
     public function getLogs(){
